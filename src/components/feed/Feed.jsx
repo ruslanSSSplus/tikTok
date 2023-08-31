@@ -8,6 +8,8 @@ import VideoUser from '../videos/VideoUser';
 import VideoDetails from '../videos/VideoDetails';
 import Spinner from '../spinner/Spinner';
 
+import Video from '../videos/Video';
+
 
  const Feed = () => {
 
@@ -33,12 +35,12 @@ import Spinner from '../spinner/Spinner';
          
          return (
             (
-               <div className="video">
+               <div className="video" key = {videoId} >
                   
                   <VideoUser {...author}/>
    
                   <div className="video-wrapper">
-                     <video src={play} loop autoPlay={false} muted={true}></video>
+                     <Video heigth='auto'  url ={ play} videoId={videoId}/>
                      <VideoDetails {...rest} />
                   </div>
                   <div className="video-music">

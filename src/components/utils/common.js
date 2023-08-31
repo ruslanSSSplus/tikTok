@@ -19,3 +19,10 @@ export const request = async ({path, method = 'GET', body}) => {
         console.error(error);
     }
 }
+
+export const formatCompactNum = (num) => {
+const formatter = Intl.NumberFormat('en', {
+    notation: 'compact'
+})
+    return formatter.format(num)
+}
